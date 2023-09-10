@@ -1,0 +1,620 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Play&family=Prompt:wght@300&display=swap");
+
+:root {
+   --bg-yellow: #ffb548;
+   --bg-yellow1: #fcc87a;
+   --bg-bb: #24434f;
+   --bg-white: #ffffff;
+   --bg-black: #000000;
+   --bg-black2: #464332;
+   --bg-black1: #797979;
+   --bg-white1: #d5d5d5;
+   --bg-blue: #cddee3;
+   --bg-blw: #dfdede;
+   --p-size: 15px;
+   --section-padding: 50px;
+}
+
+*,
+html {
+   margin: 0;
+   padding: 0;
+   top: 0;
+   font-family: sans-serif;
+}
+
+body {
+   background-color: var(--bg-white);
+   font-size: 15px;
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+}
+
+br {
+   padding: 1px 8px;
+   border-bottom: 1px dashed #000;
+}
+
+a {
+   text-decoration: none;
+   cursor: pointer;
+   color:inherit;
+}
+a:hover {
+   text-decoration: underline;
+}
+
+p {
+   padding: -3px;
+   font-size: 30px;
+}
+
+button {
+   cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+   font-family: "Prompt", sans-serif;
+}
+
+input:focus {
+   border: 2px solid var(--bg-yellow) !important;
+   box-shadow: 0 0 0 var(--bg-yellow) !important;
+}
+
+/*main content*/
+.main-backround {
+   z-index: -1;
+   width: 100%;
+   height: 500px;
+   background: linear-gradient(45deg, #e38400, #d98818);
+   position: absolute;
+}
+
+.bg-cont {
+   background: linear-gradient(45deg, #e4941d, #ffb548);
+}
+
+.main-backround .content-main {
+   margin-top: 95px;
+   width: 90%;
+   height: 250px;
+   margin-left: auto;
+   margin-right: auto;
+   display: flex;
+   justify-cpntent: space-between;
+   flex-direction: column;
+}
+
+.content-main1 {
+   margin-top: 20px;
+}
+
+.main-backround h2 {
+   margin-left: 10px;
+   font-weight: bold;
+   font-size: 30px;
+   color: var(--bg-white);
+   font-family: "Prompt", sans-serif;
+}
+
+.backround-bot {
+}
+
+.content-main p {
+   color: var(--bg-blw);
+   font-size: 17px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+.content-main a {
+   text-decoration: none;
+}
+.content-main div {
+   width: 100%;
+   height: 100px;
+   display: flex;
+   align-items: center;
+}
+
+/* main container */
+
+.t-container {
+   display: flex;
+   flex-direction: column;
+   gap: 1px;
+   background-color: #ebebeb;
+   width: auto;
+   height: auto;
+}
+
+/* navbar */
+nav {
+   position: fixed;
+   display: flex;
+   width: 100%;
+   z-index: 5;
+   justify-content: space-between;
+   background-color: var(--bg-white);
+   align-items: center;
+   height: 65px;
+   box-shadow: 0 0 10px #00000078;
+}
+
+/* logo / display nama*/
+.logo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.logo h1 {
+   padding-left: 10px;
+   margin-top: auto;
+   margin-bottom: auto;
+   font-family: "Nunito", sans-serif;
+   font-size: 30px;
+   font-weight: bold;
+   color: var(--bg-white1);
+   text-shadow: 1px 1px 1px black;
+}
+
+.logo h1 span {
+   font-family: "Nunito", sans-serif;
+   color: var(--bg-yellow);
+   text-shadow: 1px 1px 1px black;
+}
+
+/* hamburger menu */
+
+.menu {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-direction: column;
+   width: 35px;
+   height: 45px;
+}
+
+.ham-menu {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+   width: 30px;
+   height: 25px;
+   transition: 0.3s;
+   cursor: pointer;
+   margin-right: 20px;
+}
+.ham-menu span {
+   background-color: var(--bg-white1);
+   height: 5px;
+   width: 30px;
+   border-radius: 5px;
+   transition: 0.3s ease-in-out;
+   box-shadow: 1px 1px 1px black;
+}
+.ham-menu span:nth-child(2) {
+   transform-origin: 0 0;
+}
+
+.ham-menu span:nth-child(4) {
+   transform-origin: 0 100%;
+}
+.ham-menu input {
+   top: 5px;
+   z-index: 9;
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   opacity: 0;
+   cursor: pointer;
+   border: 1px solid black;
+}
+.ham-menu input:checked ~ span:nth-child(2) {
+   background-color: var(--bg-black1);
+   box-shadow: none;
+   transform: rotate(45deg);
+}
+.ham-menu input:checked ~ span:nth-child(3) {
+   transform: scale(0);
+}
+.ham-menu input:checked ~ span:nth-child(4) {
+   background-color: var(--bg-black1);
+   box-shadow: none;
+   transform: rotate(-45deg);
+}
+
+/* nav menu */
+.nav-menu {
+   width: 190px;
+   height: auto;
+   position: absolute;
+   box-shadow: 0 5px 10px #00000070;
+   border-radius: 5px;
+   background-color: #fff;
+   padding: 10px;
+   list-style: none;
+   top: 65px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   z-index: -3;
+   right: -200px;
+   animation: moveLeft 0.5s forwards;
+}
+
+@keyframes moveLeft {
+   0% {
+      right: -200px;
+   }
+   100% {
+      right: -1px;
+   }
+}
+
+.nav-menu li {
+   padding: 5px;
+   border-radius: 15px;
+   transition: 0.3s;
+   list-style: none;
+}
+.nav-menu li:hover {
+   margin-left: 10px;
+}
+
+.nav-menu li a {
+   font-size: 15px;
+   color: black;
+   text-decoration: none;
+   font-family: "Play", sans-serif;
+}
+
+.hide {
+   display: none;
+}
+
+/*Button*/
+
+.button {
+   cursor: pointer;
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   background-color: transparent;
+   border-radius: 5px;
+   transition: 0.3s ease-in-out;
+   border: 1px solid white;
+   color: white;
+   font-family: "Prompt", sans-serif;
+}
+
+.button:hover {
+   background-color: var(--bg-white);
+   color: var(--bg-yellow);
+}
+
+.btn-log {
+   margin-top: 10%;
+   width: 80px;
+   height: 40px;
+   font-weight: bold;
+}
+
+.btn {
+   width: 90%;
+}
+
+/*card*/
+
+.home-card {
+   background-color: var(--bg-white);
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   color: var(--bg-black);
+   width: 95%;
+   margin-right: auto;
+   margin-left: auto;
+   height: auto;
+   border: 1px solid black;
+}
+
+.card {
+   background-color: var(--bg-white);
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   color: var(--bg-black);
+   width: 90%;
+   margin-right: auto;
+   margin-left: auto;
+   height: auto;
+}
+
+.c-note {
+   margin-top: 10%;
+   border: none;
+}
+
+.card img {
+   width: 85px;
+   margin: auto;
+   margin-top: 10px;
+}
+
+.card h3 {
+   font-family: "Prompt", sans-serif;
+   font-weight: bold;
+   color: var(--bg-black);
+   font-size: 18px;
+}
+
+.card p {
+   font-size: var(--p-size);
+   font-family: "Nunito", sans-serif;
+   color: var(--bg-black1);
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+}
+
+/* Login page */
+
+.home-log {
+   background: linear-gradient(45deg, #ff9500, #ffb548);
+   background-repeat: no-repeat;
+   height: 100vh;
+   width: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.card-log {
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+   border-radius: 10px;
+   padding: 10px;
+   width: 80%;
+   height: auto;
+   box-shadow: 0px 0px 5px white;
+}
+
+.title-log {
+   font-size: 35px;
+   margin-top: 20px;
+   margin-bottom: 35px;
+}
+
+.register-info {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.btn-login {
+   border: none;
+   cursor: pointer;
+   padding: 10px;
+   margin-top: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   background-color: #ffb548;
+   width: 90%;
+   height: auto;
+   border-radius: 5px;
+   transition: 0.3s ease-in-out;
+   color: #fff;
+   font-family: "Prompt", sans-serif;
+}
+.btn-login:hover {
+   background-color: #99651c;
+   color: #fff;
+}
+
+.alert-log {
+   display: flex;
+   flex-direction: row;
+   width: 90%;
+   height: auto;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+}
+
+.alert-log input {
+   cursor: pointer;
+   width: 20px;
+   margin-bottom: auto;
+   margin-left: 0;
+   height: 20px;
+   margin-right: 10px;
+}
+
+.alert-log a {
+   margin-left: auto;
+   margin-bottom: auto;
+   font-size: 15px;
+}
+
+.form-floating {
+   width: 90%;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.form-floating:focus {
+   border: none;
+}
+
+/* faq page */
+
+.b-faq {
+   background-color: #fffffa;
+}
+
+.c-faq {
+   width: 95%;
+   text-align: left;
+   margin-top: 100px;
+   height: auto;
+   z-index: -3;
+}
+
+.c-faq h1 {
+   margin: auto;
+   font-weight: bold;
+}
+
+.br {
+   border: 1px solid var(--bg-bb);
+   width: 95%;
+   margin: auto;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+.c-faq h3 {
+   margin-left: 10px;
+   font-size: 23px;
+   color: var(--bg-bb);
+}
+
+.c-faq p {
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 20px;
+   color: var(--bg-black);
+}
+
+/* price home page*/
+
+.price-container {
+   margin-top: 100px;
+   text-align: center;
+   background-color: var(--bg-yellow);
+   display: flex;
+   flex-direction: row;
+}
+
+.price-title {
+   margin: auto;
+   margin-top: 20px;
+   font-size: 30px;
+   color: var(--bg-white);
+}
+
+.desk {
+   font-size: 20px;
+   font-family: "Nunito", sans-serif;
+   color: #eeeeee;
+   margin-bottom: 0;
+   margin: 10px;
+   margin: auto;
+}
+
+.card-s {
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 2px 7px rgb(255, 255, 255);
+   width: 200px;
+   margin: auto;
+   height: auto;
+   padding: 10px;
+   color: black;
+   text-align: left;
+   margin-top: 20px;
+   margin-bottom: 10px;
+}
+
+.card-s p {
+   font-size: var(--p-size);
+   font-family: "Nunito", sans-serif;
+   color: var(--bg-black1);
+   margin-bottom: 0;
+}
+
+.card-s p span {
+   color: #e26060;
+}
+
+.card-s img {
+   width: 100%;
+   border-radius: 8px;
+   margin-bottom: auto;
+   margin: auto;
+}
+
+.card-s button {
+   background-color: #e714ec;
+   width: 100px;
+   height: 40px;
+   border: 0;
+   border-radius: 10px;
+   margin-left: 35px;
+   margin-right: 35px;
+   margin-top: 10px;
+   color: white;
+   font-weight: bold;
+   transition: 0.3s ease-in-out;
+}
+
+.card-s button a {
+   text-decoration: none;
+   color: white;
+}
+
+.card-s button:hover {
+   background-color: #9f16a2;
+}
+
+.card-s-title {
+   margin-top: 20px;
+   color: var(--bg-black);
+   font-size: 1.2rem;
+}
+
+.card-s-description {
+   color: var(--color-primary);
+}
+
+.price {
+   font-weight: bold;
+   color: #e63946;
+}
+
+/*footer*/
+
+.footer {
+   background: var(--bg-black2);
+   padding-block: 10px;
+   text-align: center;
+   margin-top: 0;
+}
+
+.copyright {
+   font-size: 15px;
+   font-family: "Nunito", sans-serif;
+   color: #eeeeee;
+   margin-bottom: 0;
+   margin: 10px;
+   margin: auto;
+}
+
+/*confirm page*/
+
+.form-select {
+   width: 90% !important;
+   margin: auto;
+}
+
+/*  UNTUK KOMUNIKASI: 
+    item nya :v
+coba cek
+*/
